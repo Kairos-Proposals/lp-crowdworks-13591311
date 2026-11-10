@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairos ご提案｜顧客接点を、ひとつの神経系に。</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-900:#111b30;
+    --navy-800:#1b2a4a;
+    --navy-700:#243458;
+    --amber:#e8a33d;
+    --coral:#f2685a;
+    --green:#5b8c78;
+    --cream:#f5f3ec;
+    --ink:#20273a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans JP',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.8;
+    font-weight:400;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{
+    font-family:'Zen Kaku Gothic New','Space Grotesk',sans-serif;
+    font-weight:900;
+    letter-spacing:.02em;
+  }
+  .eyebrow{
+    font-family:'Space Grotesk',sans-serif;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    font-weight:600;
+  }
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(232,163,61,0.16), transparent 50%),
+      radial-gradient(ellipse at 85% 80%, rgba(91,140,120,0.18), transparent 55%),
+      linear-gradient(160deg, var(--navy-900) 0%, var(--navy-800) 55%, var(--navy-700) 100%);
+    color:var(--cream);
+    padding:90px 0 60px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      radial-gradient(rgba(245,243,236,0.05) 1px, transparent 1px);
+    background-size:28px 28px;
+    opacity:.5;
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-wrap:wrap;
+    gap:40px;
+    align-items:center;
+  }
+  .hero-text{flex:1 1 380px;}
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:var(--amber);
+    margin-bottom:22px;
+  }
+  .hero-badge::before{
+    content:"";
+    width:28px;height:1px;background:var(--amber);
+    display:inline-block;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem,4.6vw,3.1rem);
+    line-height:1.45;
+    color:#fff;
+    margin-bottom:20px;
+  }
+  .hero h1 span{
+    color:var(--amber);
+  }
+  .hero p.lead{
+    font-size:1rem;
+    color:#d8dce6;
+    max-width:520px;
+    margin-bottom:10px;
+  }
+  .hero .from{
+    margin-top:28px;
+    font-size:.85rem;
+    color:#9aa5bd;
+  }
+  .hero .from b{color:var(--cream);font-weight:700;}
+  .hero-visual{
+    flex:1 1 340px;
+    display:flex;
+    justify-content:center;
+  }
+  .hero-visual svg{width:100%;max-width:440px;height:auto;}
+  .node-pulse{
+    animation:pulse 3s ease-in-out infinite;
+    transform-origin:center;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:.85;}
+    50%{opacity:1;}
+  }
+  .line-flow{
+    stroke-dasharray:6 6;
+    animation:dash 6s linear infinite;
+  }
+  @keyframes dash{
+    to{stroke-dashoffset:-120;}
+  }
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:84px 0;}
+  .section-head{
+    max-width:640px;
+    margin-bottom:46px;
+  }
+  .section-head .eyebrow{color:var(--coral);}
+  .section-head h2{
+    font-size:clamp(1.5rem,3.4vw,2.1rem);
+    margin-top:10px;
+    color:var(--navy-900);
+  }
+  .section-head p{
+    margin-top:14px;
+    color:#50586c;
+    font-size:.95rem;
+  }
+
+  /* ---------- UNDERSTANDING ---------- */
+  .understand{
+    background:var(--cream);
+    position:relative;
+  }
+  .u-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:40px;
+    align-items:start;
+  }
+  .u-quote{
+    background:#fff;
+    border-left:4px solid var(--amber);
+    padding:30px 32px;
+    border-radius:4px;
+    box-shadow:0 10px 30px rgba(20,33,61,0.06);
+    font-size:1.02rem;
+    color:var(--navy-900);
+    font-weight:500;
+  }
+  .u-points{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .u-point{
+    display:flex;
+    gap:14px;
+    padding:18px 20px;
+    background:#fff;
+    border-radius:8px;
+    border:1px solid #e7e2d6;
+  }
+  .u-point .num{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    color:var(--coral);
+    font-size:1.1rem;
+  }
+  .u-point p{font-size:.88rem;color:#4a5066;}
+
+  @media(max-width:860px){
+    .u-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- VALUE ---------- */
+  .value{
+    background:linear-gradient(185deg, var(--navy-900), var(--navy-800));
+    color:var(--cream);
+  }
+  .value .section-head h2{color:#fff;}
+  .value .section-head .eyebrow{color:var(--amber);}
+  .value .section-head p{color:#b9c0d4;}
+  .card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:22px;
+  }
+  .card{
+    background:rgba(255,255,255,0.045);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:10px;
+    padding:30px 26px;
+    position:relative;
+    transition:transform .25s ease, border-color .25s ease;
+  }
+  .card:hover{
+    transform:translateY(-4px);
+    border-color:var(--amber);
+  }
+  .card .tag{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:.7rem;
+    letter-spacing:.14em;
+    color:var(--amber);
+    text-transform:uppercase;
+  }
+  .card h3{
+    font-size:1.12rem;
+    margin:12px 0 12px;
+    color:#fff;
+  }
+  .card p{
+    font-size:.86rem;
+    color:#c5cbdd;
+  }
+  .card .mark{
+    position:absolute;
+    top:22px;right:24px;
+    width:10px;height:10px;
+    border-radius:50%;
+    background:var(--amber);
+    box-shadow:0 0 12px var(--amber);
+  }
+
+  /* ---------- PROCESS ---------- */
+  .process{background:var(--cream);}
+  .timeline{
+    position:relative;
+    margin-top:10px;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:21px; top:6px; bottom:6px;
+    width:2px;
+    background:linear-gradient(var(--amber),var(--green));
+  }
+  .phase{
+    position:relative;
+    padding-left:62px;
+    margin-bottom:38px;
+  }
+  .phase:last-child{margin-bottom:0;}
+  .phase::before{
+    content:"";
+    position:absolute;
+    left:12px; top:4px;
+    width:20px;height:20px;
+    border-radius:50%;
+    background:var(--cream);
+    border:3px solid var(--coral);
+  }
+  .phase .ph-label{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:.74rem;
+    letter-spacing:.12em;
+    color:var(--coral);
+    text-transform:uppercase;
+  }
+  .phase h3{
+    font-size:1.08rem;
+    margin:6px 0 8px;
+    color:var(--navy-900);
+  }
+  .phase p{
+    font-size:.88rem;
+    color:#52596d;
+    max-width:620px;
+  }
+  .phase .dur{
+    display:inline-block;
+    margin-top:10px;
+    font-size:.76rem;
+    color:#fff;
+    background:var(--navy-800);
+    padding:4px 12px;
+    border-radius:20px;
+  }
+
+  /* ---------- CLOSING ---------- */
+  .closing{
+    background:
+      radial-gradient(ellipse at 70% 30%, rgba(242,104,90,0.18), transparent 50%),
+      linear-gradient(165deg, var(--navy-900), #0c1322);
+    color:var(--cream);
+    text-align:center;
+    position:relative;
+  }
+  .closing h2{
+    font-size:clamp(1.6rem,4vw,2.3rem);
+    color:#fff;
+    margin-bottom:18px;
+  }
+  .closing p{
+    color:#c3c9db;
+    max-width:560px;
+    margin:0 auto 30px;
+    font-size:.95rem;
+  }
+  .cta-btn{
+    display:inline-block;
+    padding:16px 42px;
+    background:linear-gradient(120deg, var(--amber), var(--coral));
+    color:var(--navy-900);
+    font-weight:700;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:1rem;
+    box-shadow:0 14px 30px rgba(242,104,90,0.25);
+    transition:transform .2s ease;
+  }
+  .cta-btn:hover{transform:translateY(-3px);}
+  .closing .foot-note{
+    margin-top:40px;
+    font-size:.78rem;
+    color:#7f879d;
+  }
+  .closing .brand{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    letter-spacing:.1em;
+    color:var(--amber);
+  }
+
+  @media(max-width:600px){
+    section{padding:60px 0;}
+    .hero{padding:70px 0 40px;}
+    .phase{padding-left:50px;}
+    .timeline::before{left:17px;}
+    .phase::before{left:8px;}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge">Kairos からのご提案</div>
+      <h1>点在する顧客接点を、<br><span>ひとつの神経系</span>につなぐ。</h1>
+      <p class="lead">
+        問い合わせも、見込み客も、既存顧客の声も。今はバラバラに流れている情報を、
+        HubSpotと生成AIを結んだ一つの仕組みに通すことで、
+        「気づけなかった追客」を「自然に起こる追客」へ変えます。
+      </p>
+      <div class="from">
+        <b>hmllp_柳澤研</b> 様｜CRM・自動追客・ナーチャリングシステム構築のご提案資料
+      </div>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 440 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g class="line-flow" stroke="#e8a33d" stroke-width="1.4" opacity="0.65">
+          <line x1="70" y1="70" x2="220" y2="180"/>
+          <line x1="70" y1="180" x2="220" y2="180"/>
+          <line x1="70" y1="290" x2="220" y2="180"/>
+          <line x1="370" y1="70" x2="220" y2="180"/>
+          <line x1="370" y1="290" x2="220" y2="180"/>
+        </g>
+        <line x1="220" y1="180" x2="220" y2="60" stroke="#f2685a" stroke-width="1.6" opacity="0.7"/>
+
+        <circle class="node-pulse" cx="70" cy="70" r="9" fill="#5b8c78"/>
+        <text x="70" y="50" text-anchor="middle" fill="#d8dce6" font-size="11" font-family="Noto Sans JP">LINE</text>
+
+        <circle class="node-pulse" cx="70" cy="180" r="9" fill="#5b8c78"/>
+        <text x="70" y="160" text-anchor="middle" fill="#d8dce6" font-size="11" font-family="Noto Sans JP">フォーム</text>
+
+        <circle class="node-pulse" cx="70" cy="290" r="9" fill="#5b8c78"/>
+        <text x="70" y="315" text-anchor="middle" fill="#d8dce6" font-size="11" font-family="Noto Sans JP">Chatwork</text>
+
+        <circle class="node-pulse" cx="370" cy="70" r="9" fill="#5b8c78"/>
+        <text x="370" y="50" text-anchor="middle" fill="#d8dce6" font-size="11" font-family="Noto Sans JP">予約</text>
+
+        <circle class="node-pulse" cx="370" cy="290" r="9" fill="#5b8c78"/>
+        <text x="370" y="315" text-anchor="middle" fill="#d8dce6" font-size="11" font-family="Noto Sans JP">メール</text>
+
+        <circle cx="220" cy="180" r="30" fill="#1b2a4a" stroke="#e8a33d" stroke-width="2"/>
+        <text x="220" y="177" text-anchor="middle" fill="#f5f3ec" font-size="11" font-family="Space Grotesk">HubSpot</text>
+        <text x="220" y="191" text-anchor="middle" fill="#e8a33d" font-size="10" font-family="Space Grotesk">+ AI</text>
+
+        <circle cx="220" cy="48" r="13" fill="#f2685a"/>
+        <text x="220" y="27" text-anchor="middle" fill="#fff" font-size="11" font-family="Noto Sans JP">自動追客</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="understand">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Understanding</div>
+      <h2>「仕組み化したいのは、ツールではなく関係性」</h2>
+      <p>今回のご依頼を拝見し、私たちはそう受け止めました。</p>
+    </div>
+    <div class="u-grid">
+      <div class="u-quote">
+        「Webメディア・各サービスからの問い合わせや見込み客情報が点在し、
+        顧客分析・フォローアップ・商談管理・ナーチャリングを自動化できる仕組みを作りたい。
+        将来は複数クライアントへ横展開したい」——このご要望の核心は、
+        <b>単なるCRM導入ではなく、"人の判断が追いつかない部分だけをAIに預ける"設計</b>
+        にあると考えています。
+      </div>
+      <div class="u-points">
+        <div class="u-point">
+          <div class="num">01</div>
+          <p>HubSpot・LINE・Chatwork・予約システムなど接点が多く、情報がサイロ化しやすい構造</p>
+        </div>
+        <div class="u-point">
+          <div class="num">02</div>
+          <p>すべてを初期実装する必要はなく、「実用最小構成→段階拡張」が前提にある</p>
+        </div>
+        <div class="u-point">
+          <div class="num">03</div>
+          <p>将来的な複数クライアント展開を見据えた、拡張性・保守性のある設計が求められている</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="value">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What We Bring</div>
+      <h2>Kairosが設計する、5つの仕組み</h2>
+      <p>ツール導入ではなく「運用し続けられる自動化」を軸に構築します。</p>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <span class="mark"></span>
+        <div class="tag">Integration</div>
+        <h3>HubSpot × 生成AI 統合基盤</h3>
+        <p>顧客情報・商談情報をHubSpotに一元化し、ChatGPT/Claude/Geminiによる属性分析・関心商品の自動整理を実装します。</p>
+      </div>
+      <div class="card">
+        <span class="mark"></span>
+        <div class="tag">Channels</div>
+        <h3>マルチチャネル自動連携</h3>
+        <p>Webフォーム・メール・LINE公式・Chatwork・TimeRex予約などをMake／n8n／GASで接続し、問い合わせ内容から顧客を自動登録・分類します。</p>
+      </div>
+      <div class="card">
+        <span class="mark"></span>
+        <div class="tag">Nurturing</div>
+        <h3>AIナーチャリングエンジン</h3>
+        <p>顧客ごとの反応・商談履歴に応じて追客文面・提案文面をAIが自動生成。ステップ配信とリマインドで対応漏れを防ぎます。</p>
+      </div>
+      <div class="card">
+        <span class="mark"></span>
+        <div class="tag">Governance</div>
+        <h3>可視化と承認フロー</h3>
+        <p>対応漏れ・追客漏れの検知通知、次回アクション提案、送信前の確認・承認機能で「AI任せにしすぎない」運用を実現します。</p>
+      </div>
+      <div class="card">
+        <span class="mark"></span>
+        <div class="tag">Scalability</div>
+        <h3>複数クライアント展開を見据えた設計</h3>
+        <p>運用コストと拡張性を両立するアーキテクチャで、将来的なクライアント別運用・横展開にそのまま接続できる構成にします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How We Proceed</div>
+      <h2>段階導入のスケジュールイメージ</h2>
+      <p>すべてを一度に作らず、使いながら育てる進め方を想定しています。</p>
+    </div>
+    <div class="timeline">
+      <div class="phase">
+        <div class="ph-label">Phase 0</div>
+        <h3>ヒアリング・要件設計</h3>
+        <p>現行の業務フロー、使用ツール、問い合わせ経路を棚卸しし、MVPの範囲と優先度を合意します。</p>
+        <span class="dur">約1週間</span>
+      </div>
+      <div class="phase">
+        <div class="ph-label">Phase 1</div>
+        <h3>最小構成の構築（MVP）</h3>
+        <p>HubSpotへの顧客・商談情報一元化と、フォーム／メールからの自動登録・分類を実装。まず「情報が散らばらない状態」を作ります。</p>
+        <span class="dur">2〜3週間</span>
+      </div>
+      <div class="phase">
+        <div class="ph-label">Phase 2</div>
+        <h3>AI追客・ナーチャリングの実装</h3>
+        <p>生成AIによる顧客分析、追客文面の自動生成、ステップ配信、対応漏れ検知・通知を追加します。</p>
+        <span class="dur">2〜3週間</span>
+      </div>
+      <div class="phase">
+        <div class="ph-label">Phase 3</div>
+        <h3>チャネル拡張・継続改善</h3>
+        <p>LINE・Chatwork・予約システム連携の拡張、運用データをもとにしたチューニング、複数クライアント対応への拡張を継続的にご支援します。</p>
+        <span class="dur">継続運用</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing" id="contact">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#e8a33d;">Next Action</div>
+    <h2>まずは、現状のフローを聞かせてください。</h2>
+    <p>
+      概算費用・納期・推奨構成・月額運用コストの目安など、
+      ご応募いただいた質問事項に沿って個別にご提案いたします。
+      ソースコード・設定情報・運用マニュアルも含めて納品可能です。
+    </p>
+    <a href="#" class="cta-btn">Kairosに相談する</a>
+    <div class="foot-note">
+      <span class="brand">KAIROS</span> ｜ Web制作・システム開発チーム — HubSpot × 生成AI 自動化のご相談はお気軽に
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
